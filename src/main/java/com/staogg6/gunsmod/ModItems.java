@@ -2,13 +2,11 @@ package com.staogg6.gunsmod;
 
 import java.util.function.Function;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
 public final class ModItems {
@@ -41,14 +39,6 @@ public final class ModItems {
 	}
 
 	public static void register() {
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> {
-			entries.accept(PISTOL);
-			entries.accept(RIFLE);
-			entries.accept(SHOTGUN);
-			entries.accept(SNIPER);
-			entries.accept(BULLET);
-			entries.accept(ORBITAL_DESIGNATOR);
-			entries.accept(ORBITAL_CANNON);
-		});
+		// creative tab entries are added in a later step
 	}
 }

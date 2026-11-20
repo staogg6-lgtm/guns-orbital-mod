@@ -54,7 +54,7 @@ public class GunItem extends Item {
 		ServerLevel server = (ServerLevel) level;
 
 		if (!player.isCreative() && !takeBullet(player)) {
-			player.displayClientMessage(Component.literal("Out of bullets"), true);
+			player.sendOverlayMessage(Component.literal("Out of bullets"));
 			server.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.DISPENSER_FAIL,
 					SoundSource.PLAYERS, 0.8f, 1.6f);
 			return InteractionResult.FAIL;

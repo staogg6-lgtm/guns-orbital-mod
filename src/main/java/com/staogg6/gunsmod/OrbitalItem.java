@@ -55,12 +55,12 @@ public class OrbitalItem extends Item {
 		BlockHitResult hit = server.clip(
 				new ClipContext(eye, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, player));
 		if (hit.getType() == HitResult.Type.MISS) {
-			player.displayClientMessage(Component.literal("No target in range. Aim at the ground."), true);
+			player.sendOverlayMessage(Component.literal("No target in range. Aim at the ground."));
 			return InteractionResult.FAIL;
 		}
 
 		Vec3 target = hit.getLocation();
-		player.displayClientMessage(Component.literal("Orbital strike inbound..."), true);
+		player.sendOverlayMessage(Component.literal("Orbital strike inbound..."));
 		server.playSound(null, target.x, target.y, target.z, SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 3.0f,
 				0.7f);
 		countdown(server, player, target, delayTicks);

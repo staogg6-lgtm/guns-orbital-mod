@@ -16,3 +16,13 @@ for c in \
   echo "=== $c" >> "$OUT"
   javap -cp "$CP" -public "$c" >> "$OUT" 2>&1
 done
+
+# Fabric API classes (to find the creative tab events)
+{
+  echo "=== FABRIC API jars"
+  FJARS=$(find "$HOME/.gradle" -name 'fabric-*.jar' 2>/dev/null | grep -v -E 'sources|javadoc')
+  echo "$FJARS" | head -80
+  for j in $FJARS; do
+    unzip -l "$j" 2>/dev/null | awk '{print $4}' | grep -i -E 'creativetab|itemgroup|CreativeModeTab' | sed "s#^#$(basename $j): #"
+  done
+} >> "$OUT" 2>&1

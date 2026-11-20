@@ -43,7 +43,7 @@ public final class Scheduler {
 				try {
 					t.action.run();
 				} catch (Exception e) {
-					// never let one bad task crash the server
+					e.printStackTrace(); // never let one bad task crash the server
 				}
 			}
 		});

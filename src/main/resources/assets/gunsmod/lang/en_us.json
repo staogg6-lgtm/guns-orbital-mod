@@ -5,5 +5,14 @@
   "item.gunsmod.shotgun": "Shotgun",
   "item.gunsmod.sniper_rifle": "Sniper Rifle",
   "item.gunsmod.orbital_designator": "Orbital Strike Designator",
-  "item.gunsmod.orbital_cannon": "Orbital Cannon"
+  "item.gunsmod.orbital_cannon": "Orbital Cannon",
+  "item.gunsmod.plasma_rifle": "Plasma Rifle",
+  "item.gunsmod.railgun": "Railgun",
+  "item.gunsmod.minigun": "Minigun",
+  "item.gunsmod.rocket_launcher": "Rocket Launcher",
+  "item.gunsmod.grenade_launcher": "Grenade Launcher",
+  "item.gunsmod.grenade": "Frag Grenade",
+  "item.gunsmod.mini_nuke": "Mini Nuke",
+  "item.gunsmod.plasma_cell": "Plasma Cell",
+  "item.gunsmod.rocket": "Rocket"
 }

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "gunsmod:item/grenade_launcher"
+  }
+}

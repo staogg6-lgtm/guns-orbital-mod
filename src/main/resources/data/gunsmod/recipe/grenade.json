@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:gunpowder",
+    "minecraft:gunpowder",
+    "minecraft:iron_ingot"
+  ],
+  "result": {
+    "id": "gunsmod:grenade",
+    "count": 2
+  }
+}

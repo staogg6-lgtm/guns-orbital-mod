@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "III",
+    "GTS",
+    "  S"
+  ],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "G": "minecraft:gunpowder",
+    "T": "minecraft:tnt",
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "id": "gunsmod:grenade_launcher",
+    "count": 1
+  }
+}

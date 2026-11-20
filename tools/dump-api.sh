@@ -26,3 +26,10 @@ done
     unzip -l "$j" 2>/dev/null | awk '{print $4}' | grep -i -E 'creativetab|itemgroup|CreativeModeTab' | sed "s#^#$(basename $j): #"
   done
 } >> "$OUT" 2>&1
+
+# Signatures of the creative tab event classes
+FJ=$(find "$HOME/.gradle" -name 'fabric-creative-tab-api-v1*.jar' | grep -v sources | head -1)
+for c in net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents 'net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents$ModifyOutput' net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTabOutput; do
+  echo "=== $c" >> "$OUT"
+  javap -cp "$FJ:$CP" -public "$c" >> "$OUT" 2>&1
+done

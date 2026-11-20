@@ -71,7 +71,7 @@ public class GunItem extends Item {
 		if (g.recoil() > 0) {
 			Vec3 back = player.getLookAngle().scale(-g.recoil());
 			player.push(back.x, back.y * 0.3 + 0.05, back.z);
-			player.hurtMarked = true;
+			player.syncVelocity = true;
 		}
 		player.getCooldowns().addCooldown(gun, g.cooldown());
 		return InteractionResult.SUCCESS;

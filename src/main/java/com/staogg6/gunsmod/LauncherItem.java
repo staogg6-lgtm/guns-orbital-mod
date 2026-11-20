@@ -72,7 +72,7 @@ public class LauncherItem extends Item {
 		if (recoil > 0) {
 			Vec3 back = look.scale(-recoil);
 			player.push(back.x, back.y * 0.3 + 0.05, back.z);
-			player.hurtMarked = true;
+			player.syncVelocity = true;
 		}
 		if (!player.isCreative() || cooldown > 0) {
 			player.getCooldowns().addCooldown(cdStack, cooldown);

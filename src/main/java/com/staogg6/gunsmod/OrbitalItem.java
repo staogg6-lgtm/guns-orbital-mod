@@ -185,7 +185,7 @@ public class OrbitalItem extends Item {
 					e.igniteForSeconds(4f);
 					Vec3 away = e.position().subtract(t).normalize();
 					e.push(away.x * 1.2, 0.9, away.z * 1.2);
-					e.hurtMarked = true;
+					e.syncVelocity = true;
 				}
 			}
 		});

@@ -1,0 +1,62 @@
+name: Build mod
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 9.6.0
+
+      - name: Build
+        id: build
+        run: |
+          set -o pipefail
+          gradle build --stacktrace --console=plain 2>&1 | tee /tmp/build.log
+
+      - name: Dump Minecraft API signatures (helps fix compile errors)
+        if: always()
+        continue-on-error: true
+        run: bash tools/dump-api.sh /tmp/api-dump.txt
+
+      - name: Publish log and jar to the build-log branch
+        if: always()
+        run: |
+          mkdir -p /tmp/out
+          cp /tmp/build.log /tmp/out/ || true
+          cp /tmp/api-dump.txt /tmp/out/ || true
+          for f in build/libs/*.jar; do
+            case "$f" in *-sources.jar) ;; *) cp "$f" /tmp/out/ ;; esac
+          done 2>/dev/null || true
+          echo "outcome=${{ steps.build.outcome }}" > /tmp/out/status.txt
+          cd /tmp/out
+          git init -q
+          git checkout -q -b build-log
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git add -A
+          git commit -qm "build output for ${{ github.sha }} (${{ steps.build.outcome }})"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" build-log
+
+      - name: Attach the jar to a release
+        if: steps.build.outcome == 'success'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Guns & Orbital Strike (latest build)
+          files: build/libs/guns-orbital-strike-*.jar

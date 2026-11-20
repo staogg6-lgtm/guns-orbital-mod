@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": ["DBD", "IRI", " I "],
+  "key": { "D": "minecraft:diamond", "B": "minecraft:beacon", "I": "minecraft:iron_ingot", "R": "minecraft:redstone_block" },
+  "result": { "id": "gunsmod:orbital_designator", "count": 1 }
+}

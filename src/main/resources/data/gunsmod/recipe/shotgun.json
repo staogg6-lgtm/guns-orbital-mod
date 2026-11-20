@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": ["IIS", "SSR"],
+  "key": { "I": "minecraft:iron_ingot", "R": "minecraft:redstone", "S": "minecraft:stick" },
+  "result": { "id": "gunsmod:shotgun", "count": 1 }
+}

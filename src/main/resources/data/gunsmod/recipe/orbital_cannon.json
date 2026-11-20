@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": ["NBN", "ODO", "ONO"],
+  "key": { "N": "minecraft:netherite_ingot", "B": "minecraft:beacon", "O": "minecraft:obsidian", "D": "gunsmod:orbital_designator" },
+  "result": { "id": "gunsmod:orbital_cannon", "count": 1 }
+}

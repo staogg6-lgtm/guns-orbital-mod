@@ -1,0 +1,9 @@
+{
+  "item.gunsmod.bullet": "Bullet",
+  "item.gunsmod.pistol": "Pistol",
+  "item.gunsmod.rifle": "Assault Rifle",
+  "item.gunsmod.shotgun": "Shotgun",
+  "item.gunsmod.sniper_rifle": "Sniper Rifle",
+  "item.gunsmod.orbital_designator": "Orbital Strike Designator",
+  "item.gunsmod.orbital_cannon": "Orbital Cannon"
+}

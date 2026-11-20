@@ -1,0 +1,19 @@
+{
+	"schemaVersion": 1,
+	"id": "gunsmod",
+	"version": "${version}",
+	"name": "Guns & Orbital Strike",
+	"description": "Four guns, ammo, and two orbital strike devices that call down a beam from the sky.",
+	"authors": ["staogg6"],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["com.staogg6.gunsmod.GunsMod"]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.0",
+		"minecraft": ">=26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
